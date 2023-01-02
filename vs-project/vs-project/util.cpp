@@ -18,6 +18,16 @@ Mat crop_image(Mat img) {
 	return crop_img;
 }
 
+Mat crop_image_by_right_width(Mat img,int right_width) {
+	// 截取图片的右侧指定宽度
+	if (img.empty()) return Mat();
+
+	int cols = img.cols;
+	Mat crop_img = img.colRange(Range((cols * 70 / 100) + right_width, cols));
+
+	return crop_img;
+}
+
 
 Mat threshold_img(Mat img,bool rgbFlag = false) {
 	// 变黑白图，并返回成RGB格式的数据
@@ -83,24 +93,32 @@ int parse_video(char* path) {
 		vector<Vec4i> lines = hough_line_x(b_img);
 
 		int linesSize = 0;
+		int minX = 999999;
 		for (size_t i = 0; i < lines.size(); i++)
 		{
 			// HoughLinesP 需要自行过滤掉角度
-			float angle = atan2(lines[i][1] - lines[i][3],lines[i][0] - lines[i][2]);
+			//float angle = atan2(lines[i][1] - lines[i][3],lines[i][0] - lines[i][2]);
 			//cout << "angle:" << angle << endl;
-			if (angle > minAngle && angle < maxAngle) {
+			// 更省事的办法是，两点的X轴坐标相同的就是垂直线
+			if (lines[i][0] == lines[i][2]) {
 				linesSize++;
 				cout << "lines:" << lines[i] << endl;
+				if (lines[i][0] < minX) {
+					minX = lines[i][0];
+				}
 				line(crop_img_output, Point(lines[i][0], lines[i][1]), Point(lines[i][2], lines[i][3]), Scalar(0, 0, 255), 1, 8);
 			}
 			
 		}
 		cout << "lines size:" << linesSize << endl;
- 
+		if (minX != 999999) {
+			// 这里截取到文字的窗口
+			Mat crop_img2 = crop_image_by_right_width(frame, minX);
+			imshow("debug image", crop_img2);
+		}
  
 		imshow("input image", frame);
 		imshow("output image", crop_img_output);
-		imshow("debug image", b_img);
 
 		if ((char)waitKey(33) >= 0) break;
 

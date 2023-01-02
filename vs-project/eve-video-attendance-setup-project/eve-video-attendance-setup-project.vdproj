@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:eve-video-attendance-setup-project"
-"LanguageId" = "3:1033"
-"CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"LanguageId" = "3:2052"
+"CodePage" = "3:936"
+"UILanguageId" = "3:2052"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -396,9 +396,9 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_F1DDEABE3F7D4BB1975999B3A548A8C9"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:D:\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -415,7 +415,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:2052"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -423,7 +423,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:eve-video-attendance-setup-project"
         "ProductCode" = "8:{76189237-4875-494A-8D3E-A5D7C29519F5}"
-        "PackageCode" = "8:{4BBF7AE9-B705-4975-ACCB-9C4B753A5F27}"
+        "PackageCode" = "8:{1377B183-49FE-4E8E-95F8-22F88E5A2286}"
         "UpgradeCode" = "8:{2EA0206D-971E-4548-B4F9-C7CEACEE4684}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -944,7 +944,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7A0BCBD24F9E4A8597502CDD5F3DE9B8"
             {
-            "SourcePath" = "8:..\\x64\\Release\\vs-project.exe"
+            "SourcePath" = "8:..\\x64\\Release\\EVE视频考勤.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F1DDEABE3F7D4BB1975999B3A548A8C9"
