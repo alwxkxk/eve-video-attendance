@@ -51,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_85A012E375E5474EADB1DA12D35C4AE9"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_926A82050C670EC006348C84C27F4256"
         "OwnerKey" = "8:_7A0BCBD24F9E4A8597502CDD5F3DE9B8"
         "MsmSig" = "8:_UNDEFINED"
@@ -264,6 +270,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_85A012E375E5474EADB1DA12D35C4AE9"
+            {
+            "SourcePath" = "8:..\\chi_sim.traineddata"
+            "TargetName" = "8:chi_sim.traineddata"
+            "Tag" = "8:"
+            "Folder" = "8:_F1DDEABE3F7D4BB1975999B3A548A8C9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_926A82050C670EC006348C84C27F4256"

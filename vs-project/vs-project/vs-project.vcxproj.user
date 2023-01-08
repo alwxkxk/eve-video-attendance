@@ -7,5 +7,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommandArguments>$(ProjectDir)\..\images\test.mp4</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerEnvironment>TESSDATA_PREFIX=D:\code\eve-video-attendance\vs-project\tessdata</LocalDebuggerEnvironment>
   </PropertyGroup>
 </Project>

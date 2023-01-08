@@ -2,8 +2,20 @@
 //on the screen
 
 #include <iostream>
+#include <stdlib.h>
 #include "util.h"
+
+#include <opencv2/opencv.hpp>
+
 using namespace std;
+using namespace cv;
+
+// windows 系统下 设置成支持utf8中文显示
+void windows_cmd_support_utf8(void) {
+    system("chcp 65001 & cls");
+}
+
+
 
 
 int main(int argc, char** argv) {
@@ -13,8 +25,13 @@ int main(int argc, char** argv) {
 		getchar();
 		return -1;
 	}
+    windows_cmd_support_utf8();
 
 	parse_video(argv[1]);
+
+
+    getchar();
+    return 0;
 
 
 	return 0;

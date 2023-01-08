@@ -1,6 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <cmath>
+#include "ocr-util.h"
 
 using namespace cv;
 using namespace std;
@@ -80,6 +81,7 @@ int parse_video(char* path) {
 
 	float minAngle = 89 * CV_PI / 180;
 	float maxAngle = 91 * CV_PI / 180;
+	int minX = 999999;
 	for (;;) {
 		cap >> frame;
 
@@ -93,7 +95,6 @@ int parse_video(char* path) {
 		vector<Vec4i> lines = hough_line_x(b_img);
 
 		int linesSize = 0;
-		int minX = 999999;
 		for (size_t i = 0; i < lines.size(); i++)
 		{
 			// HoughLinesP 需要自行过滤掉角度
@@ -102,7 +103,7 @@ int parse_video(char* path) {
 			// 更省事的办法是，两点的X轴坐标相同的就是垂直线
 			if (lines[i][0] == lines[i][2]) {
 				linesSize++;
-				cout << "lines:" << lines[i] << endl;
+				//cout << "lines:" << lines[i] << endl;
 				if (lines[i][0] < minX) {
 					minX = lines[i][0];
 				}
@@ -110,11 +111,16 @@ int parse_video(char* path) {
 			}
 			
 		}
-		cout << "lines size:" << linesSize << endl;
+
+		//cout << "lines size:" << linesSize << endl;
+
 		if (minX != 999999) {
 			// 这里截取到文字的窗口
 			Mat crop_img2 = crop_image_by_right_width(frame, minX);
 			imshow("debug image", crop_img2);
+			// TODO:做一步处理，只提取白色文字进行识别以提高识别率。
+			ocr_opencv_mat(crop_img2);
+
 		}
  
 		imshow("input image", frame);
