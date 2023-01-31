@@ -48,6 +48,7 @@ Mat threshold_img(Mat img,bool rgbFlag = false) {
 
 
 
+
 vector<Vec4i> hough_line_x(Mat gray_img) {
 	vector<Vec4i> lines;
 	HoughLinesP(gray_img, lines, 1, CV_PI / 180, 10, 8, 10);
